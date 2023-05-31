@@ -1,0 +1,1252 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.sth {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 2;
+    display: none;
+}
+
+
+/* 모바일 화면 */
+/* 헤더 */
+nav#pcMenu {
+    display: none;
+}
+
+nav#mobileMenu {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e1e0e1;
+}
+
+nav#mobileMenu > a.icon {
+    display: block;
+    padding: 20px;
+}
+
+a.icon > img {
+    width: 24px;
+    height: 24px;
+}
+
+nav#mobileMenu > div.logo {
+    margin: 0 auto;
+    text-align: center;
+    line-height: 70px;
+}
+
+nav#mobileMenu > div.logo img.logo {
+    height: 22px;
+    margin: 10px;
+    padding: 12px;
+}
+
+/* 사이드 메뉴 */
+.sideMenu {
+    display: none;
+    width: 80%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: -80%;
+    background-color: white;
+    overflow-y: scroll; /* 세로로 스크롤 */
+    -ms-overflow-style: none; /* IE에서 스크롤바 없애기 */
+    z-index: 99;
+}
+
+.sideMenu::-webkit-scrollbar{
+    display:none; /* 크롬에서 스크롤바 없애기 */
+}
+
+.side_icon {
+    display: flex;
+    justify-content: space-between;
+}
+
+.side_icon > a.icon {
+    margin: 1rem;
+}
+
+.side_icon > a.icon > img {
+    width: 24px;
+    height: 24px;
+}
+
+.side_link {
+    display: flex;
+    justify-content: flex-end;
+    background-image: linear-gradient(180deg, #E4E4E4 10%, #FFF 90%);
+    height: 40px;
+}
+
+.side_link > span {
+    line-height: 40px;
+    font-size: 0.9rem;
+}
+
+.side_link > span > a {
+    margin: 5px;
+    padding: 12px;
+}
+
+.side_menu {
+    margin-top: 12px;
+}
+
+button.side_menuList {
+    margin: 0.2rem;
+    padding: 1.5rem;
+    width: 100%;
+    text-align: left;
+    font-size: 1.2rem;
+    background-color: white;
+    background-size: 0% 100%;
+}
+
+button.side_menuList.active {
+    background-image: linear-gradient(transparent 97%, #064621 60%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transition: 0.5s;
+}
+
+button.side_menuList:after {
+    content: url('../images/icon/header_mobile_chevronright.png');
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 50px;
+}
+
+button.side_menuList.active:after {
+    content: url('../images/icon/header_mobile_expandmore.png');
+}
+
+button.side_menuList > a {
+    margin: 5px;
+    padding: 5px;
+}
+
+.side_dropMenu {
+    display: none;
+}
+
+.side_dropMenu a {
+    padding: 2rem;
+}
+
+.side_dropMenu li {
+    margin-left: 3.5rem;
+}
+
+.side_info {
+    margin-top: 15px;
+    padding: 40px;
+    background-color: #E4E4E4;
+}
+
+.side_info > p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.side_sns {
+    text-align: right;
+    padding: 25px;
+    background-color: #E4E4E4;
+}
+
+.side_sns > a {
+    display: inline-block;
+    padding: 10px;
+}
+
+.side_sns img {
+    width: 30px;
+    height: 30px;
+}
+
+
+/* 메인 배너 */
+div.banner img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* 본문 */
+h2 {
+    font-family: 'Noto Serif Display', serif;
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 80px auto 60px auto;
+}
+
+/* 쇼핑 뉴스 */
+.shopNews {
+    margin-top: 0rem;
+}
+
+.shop_row {
+    display: flex;
+}
+
+.shop_column {
+    width: 50%;
+}
+
+.shop_column:nth-of-type(1) {
+    border-right: 1px solid lightgray;
+}
+
+.shop_column:nth-of-type(2) {
+    margin-top: 35%;
+}
+
+.shop_news {
+    margin-bottom: 6rem;
+}
+
+.shop_img {
+    width: 80%;
+    margin: 5px auto;
+    overflow: hidden; 
+}
+
+.shop_img img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.shop_txt {
+    width: 90%;
+    margin: 2px auto;
+}
+
+.shop_txt p {
+    margin: 10px;
+}
+
+.shop_txt p:nth-of-type(1) {
+    font-weight: bolder;
+    font-size: 1.1rem;
+}
+
+.shop_txt p:nth-of-type(2) {
+    display: none;
+}
+
+.shop_txt p:nth-of-type(2) ~ p {
+    color: #81776a;
+}
+
+/* view more */
+.view {
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    margin: 40px auto;
+    text-align: center;
+    border-bottom: 3px solid #064621;
+}
+
+.view p {
+    font-size: 1rem;
+}
+
+
+/* 아트 & 컬쳐 */
+.artCulture {
+    margin-top: 8rem;
+}
+
+.list {
+    position: relative;
+    height: 400px;
+}
+
+.left {
+    background-color: #dc8f15;
+    width: 100%;
+    height: 280px;
+    color: white;
+}
+
+.left_text {
+    text-align: left;
+    padding: 35px;
+}
+
+h4 {
+    font-family: 'Noto Serif Display', serif;
+    margin-bottom: 20px;
+}
+
+.caption {
+    font-family: 'Noto Serif Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+}
+
+.view_a {
+    margin-bottom: 30px;
+    padding: 10px;
+    border-bottom: 1px solid white;
+    width: 80px;
+    text-align: center;
+}
+
+.view_a p {
+    color: white;
+    font-size: 0.9rem;
+}
+
+.key {
+    display: flex;
+    justify-content: space-between;
+    width: 240px;
+}
+
+.page {
+    color: rgb(233, 233, 233);
+    margin: 5px;
+    padding: 5px;
+}
+
+.key button {
+    background-color: #e7e7e712;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: lighter;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+.right {
+    position: absolute;
+    top: 25%;
+    left: 55%;
+}
+
+.right > img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+.art_bottom {
+    text-align: center;
+    margin-top: 1.3rem;
+}
+
+.art_bottom > p {
+    font-size: 1.1rem;
+}
+
+.art_sns {
+    margin-top: 25px;
+}
+
+.art_sns > a {
+    display: inline-block;
+    padding: 10px;
+}
+
+.art_sns img {
+    width: 30px;
+    height: 30px;
+}
+
+
+/* 대백 브랜드 */
+.brand {
+    margin-top: 8rem;
+    
+}
+
+.brand_text > p {
+    text-align: center;
+    margin: 5px;
+    color: #413C35;
+}
+
+.brand_text > p:nth-child(3) {
+    font-size: larger;
+    font-weight: 900;
+    margin-top: -5px;
+}
+
+.brand_box {
+    height: 800px;
+    margin-top: 50px;
+}
+
+.brand_box > div {
+    height: 200px;
+    margin: 10px auto;
+}
+
+.brand_box1 {
+    background: url('../images/main/brand_model_w.png') no-repeat center;
+}
+
+.brand_box2 {
+    background: url('../images/main/brand_blue_w.png') no-repeat center;
+}
+
+.brand_box3 {
+    background: url('../images/main/brand_display_w.png') no-repeat center;
+}
+
+
+/* top button */
+a#topButton > img {
+    position: fixed;
+    right: 25px; 
+    bottom: 35px;
+    z-index: 999;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #a79d8fcc;
+}
+
+/* 푸터 */
+footer {
+    background-color: #413C35;
+    color: white;
+    padding: 30px 20px;
+    margin-top: 55px;
+}
+
+.footer_info {
+    margin: 10px;
+    margin-bottom: 65px;
+}
+
+.footer_info > .footer_logo {
+    margin-bottom: 15px;
+}
+
+.footer_info > .footer_text {
+    margin-bottom: 30px;
+}
+
+.footer_info > .footer_text > p {
+    margin-bottom: 13px;
+    font-size: 0.9rem;
+}
+
+.footer_info > .footer_text > .footer_text_eg >p {
+    margin-bottom: -5px;
+}
+
+.footer_link {
+    margin: 15px;
+}
+
+.footer_link p {
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+}
+
+.footer_link a {
+    color: white;
+}
+
+.footer_sns {
+    margin: 8px;
+    padding-right: 50px;
+    text-align: right;
+}
+
+.footer_sns > a {
+    padding: 10px;
+}
+
+.footer_sns img {
+    width: 25px;
+    height: 25px;
+}
+
+
+
+/* 태블릿 화면 */
+@media screen and (min-width: 800px) {
+
+    /* 헤더 */
+    a.icon > img {
+        width: 28px;
+        height: 28px;
+    }
+
+    nav#mobileMenu > div.logo img.logo {
+        height: 26px;
+    }
+
+    /* 사이드 메뉴 */
+    .side_icon > a.icon > img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .side_link {
+        height: 60px;
+    }
+
+    .side_link > span {
+        line-height: 60px;
+        font-size: 1.05rem;
+    }
+
+    .side_link > span > a {
+        margin-right: 22px;
+    }
+
+    .side_menu {
+        margin-top: 16px;
+    }
+
+    button.side_menuList {
+        font-size: 1.3rem;
+        margin: 0.6rem;
+    }
+
+    .side_dropMenu {
+        font-size: 1.05rem;
+    }
+
+    .side_dropMenu a {
+        padding: 2.5rem;
+    }
+
+    .side_info {
+        margin-top: 20px;
+        padding: 50px;
+    }
+    
+    .side_info > p {
+        margin-bottom: 2.5rem;
+        font-size: 1.1rem;
+    }
+    
+    .side_sns {
+        text-align: right;
+        padding: 40px;
+    }
+    
+    .side_sns > a {
+        padding: 20px;
+    }
+    
+    .side_sns img {
+        width: 35px;
+        height: 35px;
+    }
+ 
+    /* 본문 */
+    h2 {
+        font-size: 2.3rem;
+        margin: 80px auto 50px auto;
+    }
+
+    /* 쇼핑뉴스 */
+    .shopNews {
+        margin-top: 12rem;
+    }
+
+    .shop_news {
+        margin-bottom: 7rem;
+    }
+
+    .shop_img {
+        width: 75%;
+    }
+
+    .shop_img img {
+       height: 90%;
+    }
+
+    .shop_txt {
+        width: 80%;
+    }
+
+    .shop_txt p {
+        margin: 20px;
+        font-size: 1.1rem;
+    }
+
+    .shop_txt p:nth-of-type(1) {
+        font-size: 1.3rem;
+    }
+
+    .shop_txt p:nth-of-type(2) {
+        display: block;
+    }
+
+    /* 아트 & 컬쳐 */
+    .artCulture {
+        margin-top: 15rem;
+    }
+
+    .list {
+        height: 500px;
+    }
+
+    .left {
+        height: 380px;
+    }
+
+    .left_text {
+        padding: 50px;
+    }
+    
+    h4 {
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+    }
+    
+    .caption {
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+    }
+    
+    .view_a {
+        margin-bottom: 60px;
+        width: 100px;
+    }
+
+    .view_a p {
+        font-size: 1.06rem;
+    }
+    
+    .key {
+        width: 320px;
+    }
+    
+    .page {
+        margin: 8px;
+        font-size: 1.1rem;
+    }
+    
+    .key button {
+        font-size: 1.4rem;
+        width: 35px;
+        height: 35px;
+    }
+
+    .right {
+        left: 60%;
+    }
+
+    .right > img {
+        width: 87%;
+        max-width: 360px;
+    }
+
+    .art_bottom > p {
+        font-size: 1.2rem;
+    }
+
+    .art_sns {
+        margin-top: 30px;
+    }
+
+    /* 대백 브랜드 */
+    .brand {
+        margin-top: 10rem;
+    }
+
+    .brand_text > p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    
+    .brand_text > p:nth-child(3) {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-top: -20px;
+}
+
+    .view_b {
+        margin-top: 20px;
+    }
+
+    .brand_box {
+        display: flex;
+        width: 600px;
+        margin: 20px auto;
+    }
+
+    .brand_box1 {
+        background: url('../images/main/brand_model_h.png') no-repeat center;
+    }
+    
+    .brand_box2 {
+        background: url('../images/main/brand_blue_h.png') no-repeat center;
+    }
+    
+    .brand_box3 {
+        background: url('../images/main/brand_display_h.png') no-repeat center;
+    }
+
+    .brand_box > div {
+        width: 200px;
+        height: 800px;
+        margin: 2px;
+    }
+
+    /* top button */
+    a#topButton > img {
+        width: 38px;
+        height: 38px;
+    }
+
+    /* 푸터 */
+    .footer {
+        margin: 114px 153px 93px 93px;
+        
+    }
+
+    .footer_info > .footer_logo {
+        margin-bottom: 25px;
+    }
+
+    .footer_info > .footer_text {
+        margin-bottom: 50px;
+    }
+
+    .footer_info > .footer_text > p {
+        margin-bottom: 20px;
+        font-size: 0.95rem;
+    }
+
+    .footer_info > .footer_text > .footer_text_eg  {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .footer_link {
+        margin: 20px;
+        display: flex;
+    }
+
+    .footer_link1 {
+        margin-right: 100px;
+    }
+
+    .footer_link p {
+        margin-bottom: 20px;
+        font-size: 1rem;
+    }
+
+    .footer_sns {
+        margin: 10px;
+        margin-bottom: 0;
+    }
+
+    .footer_sns > a {
+        padding: 20px;
+    }
+
+    .footer_sns img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer_link a {
+        color: white;
+    }
+}
+
+
+@media screen and (min-width: 1000px) {
+
+    /* 헤더 */
+    a.icon > img {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* 사이드 메뉴 */
+    .side_icon > a.icon > img {
+        width: 30px;
+        height: 30px;
+    }
+
+
+    /* Scroll Animation (sa, 스크롤 애니메이션) */
+    .sa {
+        opacity: 0;
+        transition: all 1.5s ease;
+    }
+
+    /* 아래에서 위로 페이드 인 */
+    .sa-up {
+    transform: translate(0, 100px);
+    }
+
+    /* 위에서 아래로 페이드 인 */
+    .sa-down {
+        transform: translate(0, -100px);
+    }
+
+    /* 왼쪽에서 오른쪽으로 페이드 인 */
+    .sa-right {
+        transform: translate(-150px, 0);
+    }
+
+    /* 오른쪽에서 왼쪽으로 페이드 인 */
+    .sa-left {
+        transform: translate(150px, 0);
+    }
+
+    /* show 클래스 */
+    .sa.show {
+        opacity: 1;
+        transform: none;
+    }
+
+
+    /* 쇼핑 뉴스 */
+    .shop_row {
+        display: block;
+        max-width: 1366px;
+    }
+
+    .shop_column {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .shop_column:nth-of-type(1) {
+        border-right: none;
+    }
+
+    .shop_column:nth-of-type(2) {
+        margin-top: 5%;
+    }
+
+    .shop_news {
+        margin-bottom: 3rem;
+    }
+
+    .shop_img {
+        width: 350px;
+        text-align: center;
+    }
+
+    .shop_img > a:hover img {
+        transform: scale(1.02);
+        transition-property: all;
+        transition-timing-function: ease-in-out;
+        transition-duration: 1s;
+        filter: brightness(85%);
+    }
+
+    .shop_img img {
+        max-width: 80%;
+    }
+
+    .shop_txt {
+        width: 90%;
+    }
+
+    /* 아트 & 컬쳐 */
+    .artCulture {
+        margin-top: 22rem;
+    }
+
+    .list {
+        height: 600px;
+    }
+
+    .left {
+        max-width: 1200px;
+        height: 400px;
+        margin: 0 auto;
+    }
+
+    .left_text {
+        padding-left: 60px;
+    }
+
+    .caption {
+        font-size: 3rem;
+        margin-bottom: 70px;
+    }
+
+    .view_a {
+        margin-bottom: 50px;
+    }
+
+    .key {
+        width: 400px;
+    }
+
+    .key button {
+        font-size: 1.5rem;
+        width: 38px;
+        height: 38px;
+        margin-right: 25px;
+    }
+
+    .right {
+        left: 65%;
+    }
+
+    .right > img {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .art_sns {
+        margin-top: 35px;
+    }
+
+    .art_sns span {
+        margin: 3px;
+    }
+    
+    .art_sns img {
+        width: 33px;
+        height: 33px;
+    }
+
+    /* 대백 브랜드 */
+    .brand {
+        margin-top: 1rem; 
+    }
+
+    .brand_wrap {
+        display: flex;
+        justify-content: center;
+    }
+
+    .brand_text {
+        margin: 200px auto;
+    }
+
+    .brand_text > h2 {
+        text-align: right;
+        margin-bottom: 30px;
+    }
+
+    .brand_text > p {
+        font-size: 1.2rem;
+        text-align: right;
+    }
+
+    .view_b {
+        margin: 35px 0 auto auto;
+    }
+}
+
+
+/* PC 화면 */
+@media screen and (min-width: 1366px) {
+
+    /* 헤더 */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        z-index: 99;
+        transition: top 0.3s;
+        background-color: white;
+        border-bottom: 1px solid #e1e0e1;
+    }
+
+    nav#mobileMenu {
+        display: none;
+    }
+
+    nav#pcMenu {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav#pcMenu > div.logo {
+        margin-left: 50px;
+        margin-top: 5px;
+        padding: 10px;
+    }
+
+    nav#pcMenu > div.logo img.logo {
+        height: 30px;
+        margin: 20px auto;
+    }
+
+    .pcMenu > button {
+        font-size: 1.2rem;
+        margin-top: 7px;
+        padding: 32px;
+    }
+
+    button.tablinks {
+        background-size: 0% 100%;
+        background-color: white;
+    }
+
+    button.tablinks.active {
+        background-image: linear-gradient(transparent 97%, #064621 60%);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: 0.5s;
+        color: #064621;
+        font-weight: bolder;
+    }
+    
+    .dropMenu {
+        display: none;
+        background-color: white;
+        position: absolute;
+        top: 100px;
+        left: 0px;
+        width: 100%;
+        z-index: 99;
+        text-align: center;
+        box-sizing: border-box;
+        border-top: 1px solid #e1e0e1;
+        border-bottom: 1px solid #e1e0e1;
+        box-shadow: 0 1px 3px 1px rgb(228, 228, 228);
+    }
+
+    #info, #shop {
+        height: 140px;
+    }
+
+    #brand {
+        height: 240px;
+    }
+
+    #art {
+        height: 400px;
+    }
+
+    #service {
+        height: 280px;
+    }
+    
+    .dropMenu > ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    .dropMenu > ul > li {
+        margin: 50px;
+    }
+
+    .dropMenu > ul > li > a {
+        color: #064621;
+        font-size: 1.15rem;
+        font-weight: bolder;
+    }
+
+    .dropMenu > ul > li > ul > li {
+        margin: 20px;
+    }
+
+    .rightSide {
+        display: flex;
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    .rightSide_link {
+        margin-top: 18px;
+        margin-right: 10px;
+    }
+
+    .rightSide_link > span {
+        margin: 8px;
+    }
+    
+    .rightSide > a.icon {
+        margin: 5px 20px 5px auto;
+        padding: 10px;
+    }
+
+    /* 본문 */
+    h2 {
+        font-size: 3.5rem;
+    }
+
+    /* 메인 배너 */
+    .banner {
+        margin-top: 100px;
+    }
+
+    /* 쇼핑 뉴스 */
+    .shopNews {
+        margin-top: 16rem;
+    }
+
+    .shop_row {
+        margin: 20px auto;
+    }
+
+    .shop_img {
+        width: 400px;
+    }
+
+    /* 아트 & 컬쳐 */
+    .artCulture {
+        margin-top: 10rem;
+    }
+
+    .left {
+        height: 450px;
+    }
+
+    .left_text {
+        padding-left: 100px;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+    }
+
+    .caption {
+        font-size: 3.4rem;
+    }
+
+    .view_a {
+        margin-bottom: 65px;
+    }
+
+    .right > img {
+        max-width: 450px;
+    }
+
+    .art_bottom > p {
+        font-size: 1.25rem;
+    }
+
+    .art_sns {
+        margin-top: 35px;
+    }
+    
+    /* 대백 브랜드 */
+    .brand {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .brand h2 {
+        font-size: 3rem;
+    }
+
+    .brand_text > p {
+        font-size: 1.25rem;
+    }
+
+    .brand_box {
+        width: 900px;
+    }
+
+    .brand_box > div {
+        width: 300px;
+        margin: 4px;
+    }
+
+    /* top button */
+    a#topButton {
+        padding: 18px;
+    }
+
+    /* 푸터 */
+    footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 40px 120px 0 120px;
+        margin-top: 50px;
+    }
+
+    .footer_info {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+    }
+
+    .footer_info > .footer_logo {
+        margin-bottom: 60px;
+        
+    }
+
+    .footer_info > .footer_logo > img {
+        width: 130px;
+    }
+
+    .footer_info > .footer_text {
+        margin: 0;
+    }
+
+    .footer_info > .footer_text > p {
+        margin-bottom: 30px;
+    }
+
+    .footer_link {
+        margin-top: 10px;
+    }
+
+    .footer_link p {
+        font-size: 1.1rem;
+    }
+
+    /* .footer_sns {
+        margin-top: 20px;
+    } */
+
+    .footer_sns > a {
+        padding: 8px;
+    }
+
+    .footer_sns img {
+        width: 35px;
+        height: 35px;
+    }
+}

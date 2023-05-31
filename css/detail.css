@@ -1,0 +1,910 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+}
+
+body::-webkit-scrollbar{
+    display:none; /* 크롬에서 스크롤바 없애기 */
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.sth {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 2;
+    display: none;
+}
+
+/* 모바일 화면 */
+/* 헤더 */
+nav#pcMenu {
+    display: none;
+}
+
+nav#mobileMenu {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e1e0e1;
+}
+
+nav#mobileMenu > a.icon {
+    display: block;
+    padding: 20px;
+}
+
+a.icon > img {
+    width: 24px;
+    height: 24px;
+}
+
+nav#mobileMenu > div.logo {
+    margin: 0 auto;
+    text-align: center;
+    line-height: 70px;
+}
+
+nav#mobileMenu > div.logo img.logo {
+    height: 22px;
+    margin: 10px;
+    padding: 12px;
+}
+
+/* 사이드 메뉴 */
+.sideMenu {
+    display: none;
+    width: 80%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: -80%;
+    background-color: white;
+    overflow-y: scroll; /* 세로로 스크롤 */
+    -ms-overflow-style: none; /* IE에서 스크롤바 없애기 */
+    z-index: 99;
+}
+
+.sideMenu::-webkit-scrollbar{
+    display:none; /* 크롬에서 스크롤바 없애기 */
+}
+
+.side_icon {
+    display: flex;
+    justify-content: space-between;
+}
+
+.side_icon > a.icon {
+    margin: 1rem;
+}
+
+.side_icon > a.icon > img {
+    width: 24px;
+    height: 24px;
+}
+
+.side_link {
+    display: flex;
+    justify-content: flex-end;
+    background-image: linear-gradient(180deg, #E4E4E4 10%, #FFF 90%);
+    height: 40px;
+}
+
+.side_link > span {
+    line-height: 40px;
+    font-size: 0.9rem;
+}
+
+.side_link > span > a {
+    margin: 5px;
+    padding: 12px;
+}
+
+.side_menu {
+    margin-top: 12px;
+}
+
+button.side_menuList {
+    margin: 0.2rem;
+    padding: 1.5rem;
+    width: 100%;
+    text-align: left;
+    font-size: 1.2rem;
+    background-color: white;
+    background-size: 0% 100%;
+}
+
+button.side_menuList.active {
+    background-image: linear-gradient(transparent 97%, #064621 60%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transition: 0.5s;
+}
+
+button.side_menuList:after {
+    content: url('../images/icon/header_mobile_chevronright.png');
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 50px;
+}
+
+button.side_menuList.active:after {
+    content: url('../images/icon/header_mobile_expandmore.png');
+}
+
+button.side_menuList > a {
+    margin: 5px;
+    padding: 5px;
+}
+
+.side_dropMenu {
+    display: none;
+}
+
+.side_dropMenu a {
+    padding: 2rem;
+}
+
+.side_dropMenu li {
+    margin-left: 3.5rem;
+}
+
+.side_info {
+    margin-top: 15px;
+    padding: 40px;
+    background-color: #E4E4E4;
+}
+
+.side_info > p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.side_sns {
+    text-align: right;
+    padding: 25px;
+    background-color: #E4E4E4;
+}
+
+.side_sns > a {
+    display: inline-block;
+    padding: 10px;
+}
+
+.side_sns img {
+    width: 30px;
+    height: 30px;
+}
+
+/* 메인 사진 & 링크 */
+.detailContainer {
+    width: 100%;
+    position: relative;
+}
+
+.detailImg {
+    height: 80%;
+    background: linear-gradient(#fff,#000);
+    
+}
+.detailImg img {
+    height: 100%;
+    width: 100%;
+}
+
+
+.detailLink {
+    position: absolute;
+    bottom: 10%;
+    width: 98%;
+    height: 70px;
+    background-color: #1e1e1e;
+    border-radius: 20px;
+    margin: 0 1%;
+}
+
+.detailLink > ul {
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    
+}
+
+.detailLink > ul > li > a {
+    
+    color: white;
+}
+
+/* 대백 기본 정보 */
+.store_info {
+    width: 90%;
+    margin: 0 auto;
+    
+}
+
+.info_title {
+    height: 140px;
+    vertical-align: middle;
+    align-items: flex-start;
+    background-image: linear-gradient(transparent 99.5%, #ccc 0.5%);
+}
+
+#detailName {
+    font-size: 32px;
+    margin-bottom: 8px;
+    font-weight: 900;
+}
+
+.info_content_detail {
+    height: 140px;
+    margin-top: 24px;
+}
+
+.info_content_detail li:nth-child(3){
+    display:flex;
+    flex-direction: row;
+}
+
+.parking_info {
+    margin-top: 16px;
+    padding-top: 4px;
+    font-size: 20px;
+
+}
+
+
+
+/* 찾아오시는 길 */
+.coming_road {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+#coming_road_name {
+    font-size: 28px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.road_content {
+    display: flex;
+    flex-direction: column;
+}
+.road_content #map {
+    width:100%;
+    height: 200px;
+    border: 1px solid #000 ;
+}
+
+.transport {
+    width: 100%;
+    
+}
+
+.trans_tab {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+  
+.trans_tab > button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.trans_tab > button:hover {
+    background-color: #ddd;
+}
+
+.trans_tab > button.active {
+    font-weight: bolder;
+    color: #064621;
+    background-image: linear-gradient(transparent 97%, #064621 60%);
+}
+
+.trans_content {
+    display: none;
+    padding: 6px 12px;
+    height: 327px;
+    
+}
+
+.content_title {
+    font-weight: bolder;
+    font-size: 18px;
+    margin-top: 24px;
+}
+
+.content_detail{
+    margin-top: 3px;
+}
+
+/* 푸터 */
+footer {
+    background-color: #413C35;
+    color: white;
+    padding: 30px 20px;
+    margin-top: 55px;
+}
+
+.footer_info {
+    margin: 10px;
+    margin-bottom: 65px;
+}
+
+.footer_info > .footer_logo {
+    margin-bottom: 15px;
+}
+
+.footer_info > .footer_text {
+    margin-bottom: 30px;
+}
+
+.footer_info > .footer_text > p {
+    margin-bottom: 13px;
+    font-size: 0.9rem;
+}
+
+.footer_info > .footer_text > .footer_text_eg >p {
+    margin-bottom: -5px;
+}
+
+.footer_link {
+    margin: 15px;
+}
+
+.footer_link p {
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+}
+
+.footer_link a {
+    color: white;
+}
+
+.footer_sns {
+    margin: 8px;
+    padding-right: 50px;
+    text-align: right;
+}
+
+.footer_sns > a {
+    padding: 10px;
+}
+
+.footer_sns img {
+    width: 25px;
+    height: 25px;
+}
+
+
+
+
+/* 모바일 화면(430px~) */
+@media screen and (min-width: 430px) {
+
+    /* 메인 사진 & 링크 */
+    .detailContainer {
+        height: 350px;
+    }
+
+    .detailLink > ul {
+        padding-top: 24px;
+        font-size: 14px;
+    }
+
+    .detailLink > ul > li > a {
+        padding: 24px;
+    }
+
+    .calender {
+        display: none ;
+    }
+}
+
+
+/* 태블릿 화면 */
+@media screen and (min-width: 800px) {
+
+    /* 헤더 */
+    a.icon > img {
+        width: 28px;
+        height: 28px;
+    }
+
+    nav#mobileMenu > div.logo img.logo {
+        height: 26px;
+    }
+
+    /* 사이드 메뉴 */
+    .side_icon > a.icon > img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .side_link {
+        height: 60px;
+    }
+
+    .side_link > span {
+        line-height: 60px;
+        font-size: 1.05rem;
+    }
+
+    .side_link > span > a {
+        margin-right: 22px;
+    }
+
+    .side_menu {
+        margin-top: 16px;
+    }
+
+    button.side_menuList {
+        font-size: 1.3rem;
+        margin: 0.6rem;
+    }
+
+    .side_dropMenu {
+        font-size: 1.05rem;
+    }
+
+    .side_dropMenu a {
+        padding: 2.5rem;
+    }
+
+    .side_info {
+        margin-top: 20px;
+        padding: 50px;
+    }
+    
+    .side_info > p {
+        margin-bottom: 2.5rem;
+        font-size: 1.1rem;
+    }
+    
+    .side_sns {
+        text-align: right;
+        padding: 40px;
+    }
+    
+    .side_sns > a {
+        padding: 20px;
+    }
+    
+    .side_sns img {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* 메인 사진 & 링크 */
+    .detailContainer {
+        height: 500px;
+    }
+
+   .detailLink {
+    position: absolute;
+    width: 80%;
+    margin: 0 10%;
+   }
+
+    .detailLink > ul {
+        /* padding-top: 50px; */
+        font-size: 1.05rem;
+    }
+
+    .detailLink > ul > li {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .detailLink > ul > li > a {
+        padding: 36px;
+    }
+
+    /* 대백 기본 정보 */
+    .store_info {
+        display: flex;
+        justify-content: space-around;
+        margin-top: -90px;
+    }
+
+    .info_title {
+        height: 140px;
+        vertical-align: middle;
+        align-items: flex-start;
+        background-image: linear-gradient(transparent 100%, #ccc 0.1%);
+        
+    }
+
+    .info_content_detail {
+        padding-top: 0px;
+        margin-top: 0;
+    }
+
+    .parking_info {
+        font-size: 24px;
+    }
+
+    #coming_road_name {
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    /* 푸터 */
+    .footer {
+        margin: 114px 153px 93px 93px;
+        
+    }
+
+    .footer_info > .footer_logo {
+        margin-bottom: 25px;
+    }
+
+    .footer_info > .footer_text {
+        margin-bottom: 50px;
+    }
+
+    .footer_info > .footer_text > p {
+        margin-bottom: 20px;
+        font-size: 0.95rem;
+    }
+
+    .footer_info > .footer_text > .footer_text_eg  {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .footer_link {
+        margin: 20px;
+        display: flex;
+    }
+
+    .footer_link1 {
+        margin-right: 100px;
+    }
+
+    .footer_link p {
+        margin-bottom: 20px;
+        font-size: 1rem;
+    }
+
+    .footer_sns {
+        margin: 10px;
+        margin-bottom: 0;
+    }
+
+    .footer_sns > a {
+        padding: 20px;
+    }
+
+    .footer_sns img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer_link a {
+        color: white;
+    }
+
+    
+    
+}
+
+
+/* PC 화면(1000px~) */
+@media screen and (min-width: 1000px) {
+    
+    /* 헤더 */
+    a.icon > img {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* 사이드 메뉴 */
+    .side_icon > a.icon > img {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* 메인 사진 & 링크 */
+    .detailContainer {
+        height: 600px;
+    }
+
+    .detailLink {
+        position: absolute;
+        width: 60%;
+        margin: 0 20%;
+        bottom:15%;
+    }
+
+    .detailLink > ul {
+        /* padding-top: 60px; */
+        font-size: 1.15rem;
+    }
+
+    .info_title {
+        padding-top: 50px;
+    }
+
+    .store_info {
+        width: 60%;
+    }
+
+    .info_content_detail {
+        padding-top: 40px;
+    }
+
+    .trans_tab {
+        margin-top: 0px;
+    }
+
+    .road_content {
+        display: flex;
+        flex-direction:row;
+        margin: 0 auto;
+        gap: 60px;
+    }
+
+    .trans_tab button {
+        font-size: 18px;
+    }
+
+    .road_content #map {
+        height: 400px;
+    }
+
+    .trans_tab {
+        display: flex;
+        justify-content:left;
+        margin-top: 25px;
+    }
+
+    
+
+}
+
+
+/* PC 화면(1366px~) */
+@media screen and (min-width: 1366px) {
+
+    /* 헤더 */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        z-index: 99;
+        transition: top 0.3s;
+        background-color: white;
+        border-bottom: 1px solid #e1e0e1;
+    }
+
+    nav#mobileMenu {
+        display: none;
+    }
+
+    nav#pcMenu {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav#pcMenu > div.logo {
+        margin-left: 50px;
+        margin-top: 5px;
+        padding: 10px;
+    }
+
+    nav#pcMenu > div.logo img.logo {
+        height: 30px;
+        margin: 20px auto;
+    }
+
+    .pcMenu > button {
+        font-size: 1.2rem;
+        margin-top: 7px;
+        padding: 32px;
+    }
+
+    button.tablinks {
+        background-size: 0% 100%;
+        background-color: white;
+    }
+
+    button.tablinks.active {
+        background-image: linear-gradient(transparent 97%, #064621 60%);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: 0.5s;
+        color: #064621;
+        font-weight: bolder;
+    }
+    
+    .dropMenu {
+        display: none;
+        background-color: white;
+        position: absolute;
+        top: 100px;
+        left: 0px;
+        width: 100%;
+        z-index: 99;
+        text-align: center;
+        box-sizing: border-box;
+        border-top: 1px solid #e1e0e1;
+        border-bottom: 1px solid #e1e0e1;
+        box-shadow: 0 1px 3px 1px rgb(228, 228, 228);
+    }
+
+    #info, #shop {
+        height: 140px;
+    }
+
+    #brand {
+        height: 240px;
+    }
+
+    #art {
+        height: 400px;
+    }
+
+    #service {
+        height: 280px;
+    }
+    
+    .dropMenu > ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    .dropMenu > ul > li {
+        margin: 50px;
+    }
+
+    .dropMenu > ul > li > a {
+        color: #064621;
+        font-size: 1.15rem;
+        font-weight: bolder;
+    }
+
+    .dropMenu > ul > li > ul > li {
+        margin: 20px;
+    }
+
+    .rightSide {
+        display: flex;
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    .rightSide_link {
+        margin-top: 18px;
+        margin-right: 10px;
+    }
+
+    .rightSide_link > span {
+        margin: 8px;
+    }
+    
+    .rightSide > a.icon {
+        margin: 5px 20px 5px auto;
+        padding: 10px;
+    }
+
+    /* 메인 사진 & 링크 */
+    .detailContainer {
+        margin-top: 100px;
+        height: 600px;
+    }
+
+    .detailLink > ul {
+        /* padding-top: 100px; */
+        font-size: 1.25rem;
+    }
+
+    /* 대백 기본 정보 */
+    .store_info {
+        display: flex;
+        justify-content: space-around;
+        margin-top: -65px;
+    }
+
+    .info_title {
+        height: auto;
+        padding-right: 35px;
+        background-image: linear-gradient(90deg,transparent 99.5%, #ccc 0.5%);
+
+    }
+    #detailName {
+        font-weight: 900;
+    }tent
+    .info_content_detail {
+        height: auto;
+        padding-left: 5px;
+        padding-right: 40px;
+        /* background-image: linear-gradient(90deg,transparent 99.5%, #ccc 0.5%); */
+
+    }
+    .calender {
+        display: block ;
+    }
+    /* 지도 */
+    .coming_road {
+        width: 70%;
+        margin: 0 auto;
+        margin-top: 60px;
+    }
+
+  /* 푸터 */
+    footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 40px 120px 0 120px;
+        margin-top: 50px;
+    }
+
+    .footer_info {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+    }
+
+    .footer_info > .footer_logo {
+        margin-bottom: 60px;
+        
+    }
+
+    .footer_info > .footer_logo > img {
+        width: 130px;
+    }
+
+    .footer_info > .footer_text {
+        margin: 0;
+    }
+
+    .footer_info > .footer_text > p {
+        margin-bottom: 30px;
+    }
+
+    .footer_link p {
+        font-size: 1.1rem;
+    }
+
+    .footer_sns {
+        margin-top: 20px;
+    }
+
+    .footer_sns > a {
+        padding: 8px;
+    }
+
+    .footer_sns img {
+        width: 35px;
+        height: 35px;
+    }
+}

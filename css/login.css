@@ -1,0 +1,296 @@
+
+
+body {
+    overflow-y: scroll;
+}
+
+/* #login_wrapper{
+    width: 100%;
+    height: 810px;
+} */
+
+.login {
+    /* position: absolute; */
+    /* 브라우저 기준 오십퍼센트 */
+    /* left: 50%;
+    top: 50%; */
+    /* 내가 생각하는 중앙정렬x -> 본인 크기 기준 50%만큼 이동 */
+    /* transform: translate(-50%,-50%);  */
+    /* 푸터랑 겹침 왜? */
+    /* 해결 */
+    padding-top: 50px;
+    margin: 140px auto;
+    width: 410px;
+    padding-bottom: 150px;
+}
+
+/* h2 블록요소 부모따라 가로 크기 같음 */
+.login > h1 {
+    margin: 0;
+    font-size: 26px;
+    color: #1e1e1e;
+    text-align: center;
+    border-bottom: 2px solid #1e1e1e;
+    /* 밑줄과 초기화 디자인보다 많이 벌어지는 것을 방지 */
+    line-height: 1;
+    padding: 0 0 20px;
+} 
+
+.login > ul {
+    list-style-type: none;
+    padding: 24px 0 10px;
+    margin: 0; 
+}
+
+.login > ul > li {
+    padding:0 0 12px;
+}
+
+.login > ul > li > p:first-child {
+    font-size: 16px;
+    padding: 10px 0;
+    font-weight: bolder;
+}
+
+.login > ul > li > input {
+    /* width: 410px; class 상자 넘어감*/
+    width: 100%;
+    box-sizing: border-box;
+    height: 47px;
+    /* input 상자와 글씨 간격 */
+    text-indent: 23px;
+    border: 1px solid #E4E4E4;
+    border-radius: 10px;
+}
+
+.login > ul > li {
+    position: relative;
+    display: block;
+}
+
+.error_txt {
+    color: red;
+    margin-top: 10px;
+    font-size: 12px;
+    display: none;
+}
+
+.show, .hide {
+    position: absolute;
+    right: 15px;
+    top: 58px;
+    font-size: 28px;
+    color: #1e1e1e;
+}
+
+.hide {
+    display: none;
+}
+
+.login > ul > li > input ::-webkit-input-placeholder {
+    font-size: 14px;
+    color: #E4E4E4;
+}
+
+.login > ul > li > input[type="checkbox"] {
+    position: absolute;
+    /* 체크박스 없애버리기 */
+    left: -3000%;
+}
+
+.login > ul > li > input[type="checkbox"] + label {
+    height: 36px;
+    line-height: 36px;
+    font-size: 12px;
+}
+
+/* 
+체크박스 새로 생성 ...왜?
++ 형제 선택자 
+:before/after 앞/뒤로 인라인 형식으로 형제 형성
+인라인 형식 -> 세로선만 형성, 
+display: block 위아래로 떨어지는 문제 
+display: inline-block 문제해결
+ */
+
+.login > ul > li > input[type="checkbox"] + label:before  {
+    display: inline-block;
+    content:""; width: 18px; height:18px;
+    border: 1px solid #e4e4e4; background-color: #fff;
+
+/* 위아래 정렬 middle / -5px 눈대중 */
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* :checked 된 상태 */
+.login > ul > li > input[type="checkbox"]:checked + label:before {
+    background: url('../images/icon/login_Tick.png') no-repeat center;
+}
+
+.login > ul > li > button {
+    width: 100%;
+    height: 47px;
+    background-color: #064621;
+    border: 0;
+    font-size: 18px;
+    color: #fff;
+    
+}
+
+#id_link {
+    display: flex ;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+#id_link > a {
+    text-decoration: none;
+    color: #1e1e1e;
+    font-size: 14px;
+}
+
+#join_simple button {
+    width: 100%;
+    height: 47px;
+    border: 0;
+    font-size: 14px;
+    color: #413C35;
+}
+
+#join_kko {
+    background-color: #F7E111;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+
+#join_nv {
+    background-color: #00B900;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+#join_gg {
+    
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.simple_img  img {
+    width: 16px;
+    padding-top: 8px;
+    padding-right: 5px;
+   
+}
+
+.simple_text {
+    padding-top: 5px;
+    height: 30px;
+    font-size: 14px;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+@media screen and (max-width:800px) {
+
+    .login {
+        width: 320px;
+        padding-top: 0;
+        margin-top: 50px;
+    }
+
+}
+
+@media screen and (min-width: 800px) {
+    
+
+    .login > h1 {
+        font-size: 28px;
+    }
+
+    .login > ul > li > p:first-child {
+        font-size: 16px;
+    }
+
+    .login > ul > li > input ::-webkit-input-placeholder {
+        font-size: 15px;
+    }
+
+    .login > ul > li > input[type="checkbox"] + label {
+        font-size: 14px;
+    }
+
+    #id_link > a {
+        font-size: 15px;
+    }
+
+    .simple_text {
+        font-size: 15px;
+    }
+}
+
+
+@media screen and (min-width: 1000px) {
+
+    .login > h1 {
+        font-size: 30px;
+    }
+
+    .login > ul > li > p:first-child {
+        font-size: 16px;
+    }
+
+    .login > ul > li > input ::-webkit-input-placeholder {
+        font-size: 16px;
+    }
+
+    .login > ul > li > input[type="checkbox"] + label {
+        font-size: 15px;
+    }
+
+    #id_link > a {
+        font-size: 16px;
+    }
+}
+
+
+@media screen and (min-width: 1366px) {
+
+    .login > h1 {
+        font-size: 32px;
+    }
+
+    .login > ul > li > input ::-webkit-input-placeholder {
+        font-size: 18px;
+    }
+
+    #id_link > a {
+        font-size: 17px;
+    }
+
+    .simple_text {
+        padding-top: 3px;
+        font-size: 16px;
+    }
+}
+
+@media (min-width:800px) and (max-width:1366px) {
+
+    .login {
+        width: 320px;
+        padding-top: 0;
+        margin-top: 80px;
+    }
+    
+}
