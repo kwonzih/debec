@@ -27,7 +27,7 @@
     // mysql 연결
     $con = $mysqlConnect;
     // 쿼리 작성 -> 이메일로 데이터 검사
-    $sql = "select * from members where email='$profileModel->email'";
+    $sql = "select * from debec where email='$profileModel->email'";
     // 쿼리 실행
     $result = mysqli_query($con, $sql);
     // 레코드 수 반환
@@ -75,7 +75,7 @@
     // DB에 데이터가 존재하지 않을 때
     // 가입하지 않은 회원인 경우
     else {
-        $sql = "insert into members(id, pw, name, phone, email, postnum, address,
+        $sql = "insert into debec(id, pw, name, phone, email, postnum, address,
                                 membership, email_marketing, sms_marketing, kakao_marketing, login_type) ";
         $sql .= "values('$profileModel->email', '$profileModel->uid', '$profileModel->nickname', '$phone', '$profileModel->email', '$postnum', '$addr',
                     '$membership', '$marketing_email', '$marketing_sms', '$marketing_kakao', '$state')";

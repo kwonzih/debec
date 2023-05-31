@@ -56,9 +56,9 @@
                 <!-- 데이터베이스 연동 변수값 불러오기, 사용자가 입력 가능한 form 태그 사용 -->
                 <?php
                 // 1. 데이터베이스에 접속해라(호스트명, 사용자명, 암호, db명)
-                $con = mysqli_connect("localhost", "hjk9354", "wjddl4519!", "debec");
-                // 2. 회원 정보가 있는 members 테이블의 내용을 보여달라
-                $sql = "select * from members order by num desc";
+                $con = mysqli_connect("localhost", "namuu1", "giveitago9108!", "namuu1");
+                // 2. 회원 정보가 있는 debec 테이블의 내용을 보여달라
+                $sql = "select * from debec order by num desc";
                 // 접속 정보와 쿼리를 이용해 데이터베이스 쿼리 실행
                 $result = mysqli_query($con, $sql);
                 // 3. 테이블에 내용이 있다면 해당하는 행의 갯수를 알아내라

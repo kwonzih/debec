@@ -50,8 +50,8 @@
             }
 
             else {
-                $con = mysqli_connect("localhost", "hjk9354", "wjddl4519!", "debec");
-                $sql = "select * from members where id='$id'";
+                $con = mysqli_connect("localhost", "namuu1", "giveitago9108!", "namuu1");
+                $sql = "select * from debec where id='$id'";
                 $result = mysqli_query($con, $sql);
                 $num_record = mysqli_num_rows($result);
 

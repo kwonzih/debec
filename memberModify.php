@@ -16,8 +16,8 @@
     $marketing_sms = $_POST["marketing_sms"];
     $marketing_kakao = $_POST["marketing_kakao"];
 
-    $con = mysqli_connect("localhost", "hjk9354", "wjddl4519!", "debec");
-    $sql = "update members set pw='$pw', name='$name', phone='$phone', email='$email', postnum='$postnum', address='$addr',
+    $con = mysqli_connect("localhost", "namuu1", "giveitago9108!", "namuu1");
+    $sql = "update debec set pw='$pw', name='$name', phone='$phone', email='$email', postnum='$postnum', address='$addr',
                                 membership='$membership', email_marketing='$marketing_email', sms_marketing='$marketing_sms', kakao_marketing='$marketing_kakao'";
     $sql .= " where id = '$id'";
 

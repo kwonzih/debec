@@ -22,8 +22,8 @@
         session_start();
         $userid = $_SESSION["userid"];
 
-        $con = mysqli_connect("localhost", "hjk9354", "wjddl4519!", "debec");
-        $sql = "select * from members where id = '$userid'";
+        $con = mysqli_connect("localhost", "namuu1", "giveitago9108!", "namuu1");
+        $sql = "select * from debec where id = '$userid'";
         $result = mysqli_query($con, $sql);
         $row = mysqli_fetch_array($result);
 

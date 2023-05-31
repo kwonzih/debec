@@ -1,4 +1,4 @@
-create table members (
+create table debec (
     num int not null auto_increment,
     id char(20) not null,
     pw char(20) not null,

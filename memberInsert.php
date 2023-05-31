@@ -20,8 +20,8 @@
     $marketing_kakao = $_POST["marketing_kakao"];
 
 
-    $con = mysqli_connect("localhost", "hjk9354", "wjddl4519!", "debec");
-    $sql = "insert into members(id, pw, name, phone, email, postnum, address,
+    $con = mysqli_connect("localhost", "namuu1", "giveitago9108!", "namuu1");
+    $sql = "insert into debec(id, pw, name, phone, email, postnum, address,
                                 membership, email_marketing, sms_marketing, kakao_marketing) ";
     $sql .= "values('$id', '$pw', '$name', '$phone', '$email', '$postnum', '$addr',
                     '$membership', '$marketing_email', '$marketing_sms', '$marketing_kakao')";

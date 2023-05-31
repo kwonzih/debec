@@ -22,8 +22,8 @@
     $email = $_POST['email'];
 
     // 데이터베이스에 접속해서 sql을 전달해 해당값 수정
-    $con = mysqli_connect("localhost", "hjk9354", "wjddl4519!", "debec");
-    $sql = "update members set phone='$phone', email='$email', level=$level where num=$num";
+    $con = mysqli_connect("localhost", "namuu1", "giveitago9108!", "namuu1");
+    $sql = "update debec set phone='$phone', email='$email', level=$level where num=$num";
 
     mysqli_query($con, $sql); 
 

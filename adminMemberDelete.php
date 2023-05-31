@@ -19,8 +19,8 @@
     $num = $_GET["num"];
 
     // 데이터베이스에 접속해서 sql을 전달해 해당값 삭제
-    $con = mysqli_connect("localhost", "hjk9354", "wjddl4519!", "debec");
-    $sql = "delete from members where num = $num";
+    $con = mysqli_connect("localhost", "namuu1", "giveitago9108!", "namuu1");
+    $sql = "delete from debec where num = $num";
     mysqli_query($con, $sql);
 
     mysqli_close($con);
